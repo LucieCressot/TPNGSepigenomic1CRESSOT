@@ -3,4 +3,11 @@
 .RData
 .Ruserdata
 *.Rproj
-toto
+data/*
+results/*
+processed/*
+
+
+
+
+

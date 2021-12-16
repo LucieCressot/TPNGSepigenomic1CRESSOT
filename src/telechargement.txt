@@ -1,0 +1,25 @@
+#Téléchargement des fichiers dans fichier data: 
+cd data
+
+#Téléchargement des nouveaux fichiers ATACseq:
+#2020_372_S2 INTACT-ATACseq WOX5 3 (R1 et R2)
+wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/Data/2020_372_S2_R1.fastq.gz
+wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/Data/2020_372_S2_R2.fastq.gz
+
+#2020_380_S10 ATACseq Whole Root 2 (R1 et R2)
+wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/Data/2020_380_S10_R1.fastq.gz
+wget --user='tp_ngs' --password='Arabido2021!' https://flower.ens-lyon.fr/tp_ngs/Data/2020_380_S10_R2.fastq.gz
+
+
+#Fichiers ATACseq de la précédente publication: publicly avaible data telechargement FANS-ATAC-seq experiment performed on 50k root nuclei: 
+fastq-dump --split-files SRR4000473
+#noms = SRR4000473_1 et 2.fastq
+
+#Telechargement supporting files: séquence chromosome analysé:nom = Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+wget http://ftp.ebi.ac.uk/ensemblgenomes/pub/release-51/plants/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+
+#dézipper les fichiers .gz
+gunzip data/2020_372_S2_R1.fastq.gz
+gunzip data/2020_372_S2_R2.fastq.gz
+gunzip data/2020_380_S10_R1.fastq.gz
+gunzip data/2020_380_S10_R2.fastq.gz
